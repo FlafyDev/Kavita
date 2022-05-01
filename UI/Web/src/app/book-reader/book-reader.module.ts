@@ -7,10 +7,11 @@ import { SafeStylePipe } from './safe-style.pipe';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgbProgressbarModule, NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 import { PipeModule } from '../pipe/pipe.module';
+import { QuickSettingsComponent } from './quick-settings/quick-settings.component';
 
 
 @NgModule({
-  declarations: [BookReaderComponent, SafeStylePipe],
+  declarations: [BookReaderComponent, SafeStylePipe, QuickSettingsComponent],
   imports: [
     CommonModule,
     BookReaderRoutingModule,

@@ -1,6 +1,7 @@
 @font-face {
     font-family: "Fira_Sans";
-    src: url(../../../assets/fonts/Fira_Sans/FiraSans-Regular.ttf) format("truetype");
+    src: url(../../../assets/fonts/Fira_Sans/FiraSans-Regular.ttf)
+        format("truetype");
 }
 
 @font-face {
@@ -10,22 +11,26 @@
 
 @font-face {
     font-family: "Libre_Baskerville";
-    src: url(../../../assets/fonts/Libre_Baskerville/LibreBaskerville-Regular.ttf) format("truetype");
+    src: url(../../../assets/fonts/Libre_Baskerville/LibreBaskerville-Regular.ttf)
+        format("truetype");
 }
 
 @font-face {
     font-family: "Merriweather";
-    src: url(../../../assets/fonts/Merriweather/Merriweather-Regular.ttf) format("truetype");
+    src: url(../../../assets/fonts/Merriweather/Merriweather-Regular.ttf)
+        format("truetype");
 }
 
 @font-face {
     font-family: "Nanum_Gothic";
-    src: url(../../../assets/fonts/Nanum_Gothic/NanumGothic-Regular.ttf) format("truetype");
+    src: url(../../../assets/fonts/Nanum_Gothic/NanumGothic-Regular.ttf)
+        format("truetype");
 }
 
 @font-face {
     font-family: "RocknRoll_One";
-    src: url(../../../assets/fonts/RocknRoll_One/RocknRollOne-Regular.ttf) format("truetype");
+    src: url(../../../assets/fonts/RocknRoll_One/RocknRollOne-Regular.ttf)
+        format("truetype");
 }
 
 $dark-form-background-no-opacity: rgb(1, 4, 9);
@@ -49,17 +54,18 @@ $primary-color: #0062cc;
     padding-right: 2px;
 }
 
-.fixed-top {
+.fixed-top,
+.fixed-bottom {
     z-index: 1022;
 }
 
 .dark-mode {
-
     color: #dcdcdc !important;
     background-image: none !important;
     background-color: #292929 !important;
 
-    *:not(code), *:not(a) {
+    *:not(code),
+    *:not(a) {
         background-color: #292929;
         box-shadow: none;
         text-shadow: none;
@@ -67,7 +73,9 @@ $primary-color: #0062cc;
         color: #dcdcdc !important;
     }
 
-    *:not(input), *:not(code), *:not(:link) {
+    *:not(input),
+    *:not(code),
+    *:not(:link) {
         color: #dcdcdc !important;
     }
 
@@ -79,18 +87,27 @@ $primary-color: #0062cc;
         background-color: transparent;
     }
 
-    :link, a {
+    :link,
+    a {
         color: #8db2e5 !important;
     }
 
-    img, img[src] {
+    img,
+    img[src] {
         z-index: 1;
         filter: brightness(0.85) !important;
         background-color: initial !important;
     }
-      
-    :visited, :visited *, :visited *[class] {color: rgb(211, 138, 138) !important}
-    :link:not(cite), :link *:not(cite) {color: #8db2e5 !important}
+
+    :visited,
+    :visited *,
+    :visited *[class] {
+        color: rgb(211, 138, 138) !important;
+    }
+    :link:not(cite),
+    :link *:not(cite) {
+        color: #8db2e5 !important;
+    }
 }
 
 .reading-bar {
@@ -100,55 +117,69 @@ $primary-color: #0062cc;
 }
 
 .dark-mode {
-    .reading-bar, .book-title, .drawer-body, .drawer-container {
+    .reading-bar,
+    .book-title,
+    .drawer-body,
+    .drawer-container {
         background-color: $dark-form-background-no-opacity;
     }
     button {
         background-color: $dark-form-background-no-opacity;
     }
 
+    select {
+        background-color: $dark-form-background-no-opacity;
+    }
+
     .btn {
         &.btn-secondary {
             border-color: transparent;
-    
-            &:hover, &:focus {
+
+            &:hover,
+            &:focus {
                 border-color: #545b62;
             }
         }
-        
+
         &.btn-outline-secondary {
             border-color: transparent;
-    
-            &:hover, &:focus {
+
+            &:hover,
+            &:focus {
                 border-color: #545b62;
             }
         }
-    
+
         span {
             background-color: unset;
         }
-    
+
         i {
             background-color: unset;
         }
     }
+
+    .bottom-bar {
+        background-color: unset;
+    }
 }
 
 ::ng-deep .dark-mode .drawer-container {
-    .header, body, *:not(.progress-bar) {
+    .header,
+    body,
+    *:not(.progress-bar) {
         background-color: $dark-form-background-no-opacity !important;
     }
 }
 
-@media(max-width: 875px) {
+@media (max-width: 875px) {
     .book-title {
         display: none;
     }
-    
-} 
+}
 
 .book-title {
-    margin-top: 10px;
+    margin: 10px 0;
     text-align: center;
     text-transform: capitalize;
 }
@@ -170,7 +201,8 @@ $primary-color: #0062cc;
 
 // A bunch of resets so books render correctly
 ::ng-deep .book-content {
-    & a, & :link {
+    & a,
+    & :link {
         color: blue;
     }
 }
@@ -180,7 +212,7 @@ $primary-color: #0062cc;
 }
 
 .chapter-title {
-    padding-inline-start: 0px
+    padding-inline-start: 0px;
 }
 
 ::ng-deep .scale-width {
@@ -188,7 +220,6 @@ $primary-color: #0062cc;
     object-fit: contain;
     object-position: top center;
 }
-
 
 // Click to Paginate styles
 .icon-primary-color {
@@ -198,7 +229,6 @@ $primary-color: #0062cc;
 .dark-mode .overlay {
     opacity: 0;
 }
-
 
 .right {
     position: fixed;
@@ -239,11 +269,11 @@ $primary-color: #0062cc;
 
 .highlight {
     background-color: rgba(65, 225, 100, 0.5) !important;
-    animation: fadein .5s both;
+    animation: fadein 0.5s both;
 }
 .highlight-2 {
-  background-color: rgba(65, 105, 225, 0.5) !important;
-  animation: fadein .5s both;
+    background-color: rgba(65, 105, 225, 0.5) !important;
+    animation: fadein 0.5s both;
 }
 
 .btn {
@@ -252,16 +282,18 @@ $primary-color: #0062cc;
         border-color: transparent;
         background-color: unset;
 
-        &:hover, &:focus {
+        &:hover,
+        &:focus {
             border-color: #545b62;
         }
     }
-    
+
     &.btn-outline-secondary {
         border-color: transparent;
         background-color: unset;
 
-        &:hover, &:focus {
+        &:hover,
+        &:focus {
             border-color: #545b62;
         }
     }

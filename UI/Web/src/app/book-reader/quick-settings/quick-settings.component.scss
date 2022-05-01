@@ -1,0 +1,25 @@
+.quick-settings {
+    z-index: 1022;
+    height: 250px;
+    border-radius: 10px;
+    outline: solid 1px gray;
+    background-color: black;
+    opacity: 0;
+    transition: opacity 0.2s;
+    pointer-events: none;
+    &.is-open {
+        pointer-events: all;
+        opacity: 1;
+    }
+    * {
+        font-size: 20px;
+    }
+}
+
+$dark-form-background-no-opacity: rgb(1, 4, 9);
+
+.dark-mode {
+    select {
+        background-color: $dark-form-background-no-opacity;
+    }
+}

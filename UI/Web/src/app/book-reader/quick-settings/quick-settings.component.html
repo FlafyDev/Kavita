@@ -1,0 +1,83 @@
+<div [class.is-open]="isOpen" [class.dark-mode]="darkMode" class="quick-settings mb-2 mx-2 p-2">
+  <ng-container [ngTemplateOutlet]="section1"></ng-container>
+
+
+  <ng-template #section1>
+    <div class="controls d-flex flex-column justify-content-center" style="height: 100%">
+
+      <ng-container class="" *ngFor='let control of controls' [ngTemplateOutlet]="controlComponent"
+        [ngTemplateOutletContext]="{control:control}"></ng-container>
+    </div>
+
+    <!-- <div class="controls">
+      <label id="fontsize" class="form-label">Font Size</label>
+      <button (click)="setFontSize(-10)" class="btn btn-icon" title="Decrease" aria-labelledby="fontsize"><i
+          class="fa fa-minus" aria-hidden="true"></i></button>
+      <span>{{pageStyles['font-size']}}</span>
+      <button (click)="setFontSize(10)" class="btn btn-icon" title="Increase" aria-labelledby="fontsize"><i
+          class="fa fa-plus" aria-hidden="true"></i></button>
+    </div> -->
+
+  </ng-template>
+
+  <ng-template #section2>
+    <div class="controls d-flex flex-column justify-content-center" style="height: 100%">
+
+      <ng-container *ngFor='let control of controls' [ngTemplateOutlet]="controlComponent"
+        [ngTemplateOutletContext]="{control:control}"></ng-container>
+    </div>
+
+    <!-- <div class="controls">
+      <label id="fontsize" class="form-label">Font Size</label>
+      <button (click)="setFontSize(-10)" class="btn btn-icon" title="Decrease" aria-labelledby="fontsize"><i
+          class="fa fa-minus" aria-hidden="true"></i></button>
+      <span>{{pageStyles['font-size']}}</span>
+      <button (click)="setFontSize(10)" class="btn btn-icon" title="Increase" aria-labelledby="fontsize"><i
+          class="fa fa-plus" aria-hidden="true"></i></button>
+    </div> -->
+
+  </ng-template>
+
+  <ng-template #controlComponent let-control="control">
+    <ng-container [ngSwitch]="control.type">
+      <div *ngSwitchCase="'number'" class="flex-fill d-flex justify-content-between">
+        <div class="d-flex align-items-center">
+          <label class="">{{ control.name }}</label>
+        </div>
+        <div class="d-flex align-items-center">
+          <span class="">
+            <button (click)="control.decrease()" class="btn btn-icon" title="Decrease" aria-labelledby="fontsize"><i
+                class="fa fa-minus" aria-hidden="true"></i></button>
+            <span class="text-center" style="width: 51px; display: inline-block;">{{ control.display
+              }}</span>
+            <button (click)="control.increase()" class="btn btn-icon" title="Increase" aria-labelledby="fontsize"><i
+                class="fa fa-plus" aria-hidden="true"></i></button>
+          </span>
+        </div>
+      </div>
+
+      <div *ngSwitchCase="'menu'" class="flex-fill d-flex justify-content-between">
+
+        <div class="d-flex align-items-center">
+          <label class="my-auto form-label">{{ control.name }}</label>
+        </div>
+        <div class="d-flex align-items-center">
+
+          <span class="col-auto">
+            <select class="rounded px-2 py-1 me-3">
+              <option *ngFor="let op of control.options; let i = index" [selected]="control.value === i"
+                (onselect)="control.set(i)">
+                {{op}}
+              </option>
+            </select>
+            <!-- <span class="text-center" style="width: 41px; display: inline-block;">{{ control.value }}</span> -->
+          </span>
+        </div>
+
+      </div>
+
+    </ng-container>
+
+
+  </ng-template>
+</div>
